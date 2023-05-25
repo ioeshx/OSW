@@ -1,0 +1,46 @@
+*{
+    margin:0%;
+    padding:0%;
+}
+
+body {
+    background-color: whitesmoke;
+    font-family: "Microsoft YaHei",sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#login_table {
+    position: relative;
+    top: 200px;
+    background-color: lightseagreen;
+
+    text-align: center;
+    
+}
+
+#login_table>div {
+    font-size: 3em;
+}
+
+#login_table>form>div{
+    font-size: 1.5em;
+    text-align: right;
+}
+
+#login_table button{
+    font-size: large;
+}
+
+#verfication_code{ 
+    font-family:Arial,宋体; 
+    font-style:italic; 
+    color:green; 
+    border:0; 
+    padding:2px 3px; 
+    letter-spacing:3px; 
+    font-weight:bolder; 
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet"  href="../css/login.css">
+    <link rel="stylesheet"  href="../css/top_common_element.css">
+    <title>登录</title>
+</head>
+<body onload="createCode()">
+    <div id="login_register">   <!--将来根据登录/未登录 替换这三个按钮-->
+        <a id="userprofile" href="userprofile.html">个人主页</a>
+        <a id="login" href="login.html">登录</a> 
+        <a id="register" href="register.html">注册</a> 
+    </div>
+    
+    <nav id="navigation_bar" >
+        <a id="Tohomepage" href="homepage.html">购物网站</a>
+        <a id="Toallartifact" href="all_product.html">所有商品</a>
+        <a id="ToCart" href="cart.html">购物车</a>
+        <a id="ToDiscussion" href="discussion.html">讨论区</a>
+        <a id="ToPublication" href="publication.html">发布</a>
+    </nav>
+
+    <section id="login_table">
+        <div>登陆页面</div>
+        <form id="login_form">
+            <div>
+                <label for="username">用户名</label>
+                <input type="text" name="username" id="username" required>
+            </div>
+            <div>
+                <label for="password">密码</label>
+                <input type="text" name="password" id="password" required> 
+            </div>
+            <div>
+                <label for="verification_code_input">验证码</label>
+                <input type ="text" id ="verification_code_input" required/>  
+                <input type ="button" id="verification_code" onclick="createCode()" style="width:60px" title='点击更换验证码' /> 
+            </div>
+            <input type="submit" value="登录">
+        </form>
+        <a href="register.html">没有账号？前去注册</a>
+    </section>
+
+</body>
+</html>
+
+<script type="text/javascript" src="../js/login.js"></script>

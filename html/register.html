@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>注册</title>
+    <link rel="stylesheet"  href="../css/register.css">
+    <link rel="stylesheet"  href="../css/top_common_element.css">
+    
+
+</head>
+<body onload="createCode()">
+    <div id="login_register">   <!--将来根据登录/未登录 替换这三个按钮-->
+        <a id="userprofile" href="userprofile.html">个人主页</a>
+        <a id="login" href="login.html">登录</a> 
+        <a id="register" href="register.html">注册</a> 
+    </div>
+    
+    <nav id="navigation_bar" >
+        <a id="Tohomepage" href="homepage.html">购物网站</a>
+        <a id="Toallartifact" href="all_artifact.html">所有商品</a>
+        <a id="" href="cart.html">购物车</a>
+        <a id="" href="discussion.html">讨论区</a>
+        <a id="" href="publication.html">发布</a>
+    </nav>
+
+    <section id="register_table">
+    <div>注册页面</div>
+    <form id="register_form" name="register_form">
+        <div>
+            <label for="username">用户名</label>
+            <input type="text" name="username" id="username" required>
+            <div id="hint">用户名长度在6-15位，只能有大小写英文字母和数字。</div>
+        </div>
+        <div>
+            <label>密码</label>
+            <input type="password" name="password" id="password" required>
+            <div id="hint">密码长度在8-20位，必须同时含有大小写的英文字母和数字</div> 
+        </div>
+        <div>
+            <label>再次确认密码</label>
+            <input type="password" name="confirm_password" id="confirm_password" required> 
+        </div>
+        <div>
+            <label>手机号码</label>
+            <input type="tel" name="phone" id="phone" >
+            <span>可选</span> 
+        </div>
+        <div>
+            <label>电子邮箱</label>
+            <input type="email" name="email" id="email">
+            <span>可选</span> 
+        </div>
+        <div>
+            <label>地址</label>
+            <input type="text" name="address" id="address" >
+            <span>可选</span> 
+        </div>
+        <div>
+            <label>性别</label>
+            <select name="gender" id="gender" >
+                <option value="未知"selected>未知</option>
+                <option value="男性">男性</option>
+                <option value="女性">女性</option>
+                <option value="武装直升机">武装直升机</option>
+            </select>
+            <span>可选</span>
+        </div>
+        <div>
+            <label>出生日期</label>
+            <input name="birthday" id="birthday" type="date" >
+            <span>可选</span>
+        </div>
+        <div>
+            <label>国籍</label>
+            <select name="nationality" id="nationality" >
+                <option value="未知" selected>未知</option>
+                <option value="中国">中国</option>
+                <option value="美国">美国</option>
+                <option value="俄罗斯">俄罗斯</option>
+                <!-- TODO -->
+            </select>
+            <span>可选</span>
+        </div>
+        <div >验证码  
+            <input type ="text" id ="verfication_code_input" />  
+            <input type ="button" id="verfication_code" onclick="createCode()" style="width:60px" title='点击更换验证码' /> 
+        </div>
+        <input type="submit" value="注册">
+    </form>
+    <a href="login.html">已有账号？前去登录</a>
+    </section>
+</body>
+</html>
+
+<script type="text/javascript" src="../js/register.js"></script>

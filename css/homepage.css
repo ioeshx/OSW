@@ -1,0 +1,116 @@
+*{
+    margin:0%;
+    padding:0%;
+}
+
+body {
+    background-color: whitesmoke;
+    font-family: "Microsoft YaHei",sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#mainbodypic{
+  width: 50%;
+  margin: 1% 0% 1% 0%;
+}
+
+/* #search {
+    position:relative;
+    top: 30px;
+    text-align: center;
+} */
+
+#mainbody {
+    position:relative;
+    width: 50%;
+    top: 10%;
+    margin: 1% 0% 1% 0%;
+    text-align: left;
+}
+
+#mainbody>div>div{
+  text-align: center;
+}
+
+#copyright {
+    position:relative;
+    
+    margin: 1% 0% 1% 0%;
+
+    text-align: center;
+}
+
+.seacrch_container {
+    position: relative;
+    display: flex;
+    height: 2.7rem;
+    width: 50%;
+    min-width: 200px;
+    max-width: 500px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, .05);
+
+    margin: 1% 0% 1% 0%;
+  }
+  
+  .seacrch_container input {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid  rgb(176 190 197);
+    background-color: transparent;
+    padding: 0.625rem 70px 0.625rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    color: rgb(69 90 100);
+    outline: none;
+    transition: all .15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .seacrch_container input:focus {
+    border: 1px solid rgb(68, 71, 219);
+  }
+  
+  .btn {
+    position: absolute;
+    width: 65px;
+    right: 4px;
+    top: 4px;
+    bottom: 4px;
+    z-index: 10;
+    border-radius: 4px;
+    background-color: rgb(15, 16, 23);
+    color: #fff;
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    transition: .6s ease;
+  }
+  
+  .btn:hover {
+    right: 2px;
+    top: 2px;
+    bottom: 2px;
+    border-radius: 8px;
+  }
+  
+  .seacrch_container input:placeholder-shown ~ .btn {
+    pointer-events: none;
+    background-color: gray;
+    opacity: 0.5;
+  }
+  
+ 
