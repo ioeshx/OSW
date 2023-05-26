@@ -3,24 +3,11 @@
 <head>
     <title>注册</title>
     <link rel="stylesheet"  href="../css/register.css">
-    <link rel="stylesheet"  href="../css/top_common_element.css">
-    
+    <link rel="stylesheet"  href="../css/common.css">
 
 </head>
-<body onload="createCode()">
-    <div id="login_register">   <!--将来根据登录/未登录 替换这三个按钮-->
-        <a id="userprofile" href="userprofile.html">个人主页</a>
-        <a id="login" href="login.html">登录</a> 
-        <a id="register" href="register.html">注册</a> 
-    </div>
-    
-    <nav id="navigation_bar" >
-        <a id="Tohomepage" href="homepage.html">购物网站</a>
-        <a id="Toallartifact" href="all_artifact.html">所有商品</a>
-        <a id="" href="cart.html">购物车</a>
-        <a id="" href="discussion.html">讨论区</a>
-        <a id="" href="publication.html">发布</a>
-    </nav>
+<body>
+    <header id="top_nav"></header>
 
     <section id="register_table">
     <div>注册页面</div>
@@ -82,15 +69,19 @@
             </select>
             <span>可选</span>
         </div>
-        <div >验证码  
-            <input type ="text" id ="verfication_code_input" required/>  
-            <input type ="button" id="verfication_code" onclick="createCode()" style="width:60px" title='点击更换验证码' /> 
+        <div >
+            <label for="verification_code_input">验证码</label>
+            <input type ="text" id ="verification_code_input" required/>  
+            <input type ="button" id="verification_code" onclick="createCode()" style="width:60px" title='点击更换验证码' /> 
         </div>
         <input type="submit" value="注册">
     </form>
     <a href="login.html">已有账号？前去登录</a>
     </section>
+    
+    <footer id="copyright"></footer>
 </body>
 </html>
 
 <script type="text/javascript" src="../js/register.js"></script>
+<script src="../js/load_common.js"></script>

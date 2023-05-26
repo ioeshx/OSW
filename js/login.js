@@ -1,4 +1,5 @@
-var code;      
+var code;
+
 function createCode(){ 
   code = "";  
   var codeLength = 4;  
@@ -9,9 +10,10 @@ function createCode(){
     var index = Math.floor(Math.random()*36);  
     code += random[index];              
   }  
-  checkCode.value = code;//把code值赋给验证码  
+  checkCode.value = code;
 }
 
+document.addEventListener("DOMContentLoaded",createCode());
 
 document.getElementById("login_form").onsubmit = function(event){
   event.preventDefault();
