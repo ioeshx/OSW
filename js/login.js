@@ -16,18 +16,17 @@ function createCode(){
 document.getElementById("login_form").onsubmit = function(event){
   event.preventDefault();
   //验证码的检验
-  // var inputCode = document.getElementById("verification_code_input").value.toUpperCase();      
-  // if(inputCode.length <= 0) {   
-  //   alert("请输入验证码！");
-  //   return false; 
-  // }else if(inputCode != code ) {  
-  //   alert("验证码输入错误！");  
-  //   createCode();           
-  //   document.getElementById("verfication_code_input").value = "";
-  //   return false; 
-  // }else { 
-  //   //验证码正确 
-  // }
+  var inputCode = document.getElementById("verification_code_input").value.toUpperCase();      
+  if(inputCode.length <= 0) {   
+    alert("请输入验证码！");
+    return false; 
+  }else if(inputCode != code ) {  
+    alert("验证码输入错误！");  
+    createCode();           
+    document.getElementById("verfication_code_input").value = "";
+    return false; 
+  }
+
   const form = document.getElementById("login_form");
   const formData = new FormData(form);
   const username = formData.get("username");
@@ -58,6 +57,7 @@ document.getElementById("login_form").onsubmit = function(event){
     localStorage.setItem('username',username);
     localStorage.setItem('password',password);
     localStorage.setItem("isLogin","true");
+    alert("登录成功");
     window.location.href = "../html/homepage.html";
   })
   .catch(error => {
