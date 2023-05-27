@@ -8,38 +8,38 @@
 <body>
     <header id="top_nav"></header>
 
-    <form id="publication_form" enctype="multipart/form-data">
+    <form id="publication_form" enctype="multipart/form-data" >
         <div>
             <label for="PaintingName">艺术品名称</label>
-            <input type="text" id="PaintingName" name="PaintingName">
+            <input type="text" id="PaintingName" name="PaintingName" value="">
         </div>
         <div>
             <label for="AuthorName">作者名称</label>
-            <input type="text" id="AuthorName" name="AuthorName">
+            <input type="text" id="AuthorName" name="AuthorName" value="">
         </div>
         <div>
             <label for="Description">作品简介</label>
-            <textarea id="Description" name="Description"></textarea>
+            <textarea id="Description" name="Description" value=""></textarea>
         </div>
         <div>
             <label for="YearOfWork">作品年份</label>
-            <Input type="date" id="YearOfWork" name="YearOfWork">
+            <Input type="number" id="YearOfWork" name="YearOfWork" min="0" max="2030" value="0">
         </div>
         <div>
-            <label for="genre">作品流派</label>
-            <Input type="text" id="genre" name="genre">
+            <label for="Genre">作品流派</label>
+            <Input type="text" id="Genre" name="Genre" value="0">
         </div>
         <div>
             <label for="Width">宽度</label>
-            <Input type="number" id="Width" name="Width"><span>cm</span>
+            <Input type="number" id="Width" name="Width" min="0" max="10000" value="0"><span>cm</span>
         </div>
         <div>
             <label for="Height">高度</label>
-            <Input type="number" id="Height" name="Height"><span>cm</span>
+            <Input type="number" id="Height" name="Height" min="0" max="10000" value="0"><span>cm</span>
         </div>
         <div>
             <label for="Image">作品图片</label>
-            <Input type="file" id="Image" name="Image">
+            <Input type="file" id="Image" name="Image" accept="image/*">
         </div>
         <input id="publication_submit" name="publication_submit" type="submit">                       
     </form>
