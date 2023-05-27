@@ -22,12 +22,24 @@
             <textarea id="Description" name="Description" value=""></textarea>
         </div>
         <div>
-            <label for="YearOfWork">作品年份</label>
-            <Input type="number" id="YearOfWork" name="YearOfWork" min="0" max="2030" value="0">
+            <label for="YearOfWork">年份</label>
+            <Input type="number" id="YearOfWork" name="YearOfWork" min="0" max="2023" value="0">
         </div>
         <div>
-            <label for="Genre">作品流派</label>
-            <Input type="text" id="Genre" name="Genre" value="0">
+            <label for="Genre">流派</label>
+            <Input type="text" id="Genre" name="Genre" value="">
+        </div>
+        <div>
+            <label for="Era">时代</label>
+            <select name="Era" id="Era">
+                <option value="中世纪"selected>中世纪</option>
+                <option value="文艺复兴">文艺复兴</option>
+                <option value="文艺复新后期">文艺复新后期</option>
+                <option value="近代早期">近代早期</option>
+                <option value="近代">近代</option>
+                <option value="现代">现代</option>
+            </select>
+            <!-- <Input type="text" id="Era" name="Era" value="0"> -->
         </div>
         <div>
             <label for="Width">宽度</label>
@@ -36,6 +48,10 @@
         <div>
             <label for="Height">高度</label>
             <Input type="number" id="Height" name="Height" min="0" max="10000" value="0"><span>cm</span>
+        </div>
+        <div>
+            <label for="Cost">价格</label>
+            <Input type="number" id="Cost" name="Cost" min="0" max="100000000" value="0"><span>RMB</span>
         </div>
         <div>
             <label for="Image">作品图片</label>
