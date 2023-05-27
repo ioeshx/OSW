@@ -3,11 +3,51 @@
 <head>
     <title>发布</title>
     <link rel="stylesheet" href="../css/common.css">
-    <script src="../js/load_common.js"></script>
+    
 </head>
 <body>
     <header id="top_nav"></header>
+
+    <form id="publication_form" enctype="multipart/form-data">
+        <div>
+            <label for="PaintingName">艺术品名称</label>
+            <input type="text" id="PaintingName" name="PaintingName">
+        </div>
+        <div>
+            <label for="AuthorName">作者名称</label>
+            <input type="text" id="AuthorName" name="AuthorName">
+        </div>
+        <div>
+            <label for="Description">作品简介</label>
+            <textarea id="Description" name="Description"></textarea>
+        </div>
+        <div>
+            <label for="YearOfWork">作品年份</label>
+            <Input type="date" id="YearOfWork" name="YearOfWork">
+        </div>
+        <div>
+            <label for="genre">作品流派</label>
+            <Input type="text" id="genre" name="genre">
+        </div>
+        <div>
+            <label for="Width">宽度</label>
+            <Input type="number" id="Width" name="Width"><span>cm</span>
+        </div>
+        <div>
+            <label for="Height">高度</label>
+            <Input type="number" id="Height" name="Height"><span>cm</span>
+        </div>
+        <div>
+            <label for="Image">作品图片</label>
+            <Input type="file" id="Image" name="Image">
+        </div>
+        <input id="publication_submit" name="publication_submit" type="submit">                       
+    </form>
+
     <footer id="copyright"></footer>
 
 </body>
 </html>
+
+<script src="../js/load_common.js"></script>
+<script src="../js/publication.js"></script>

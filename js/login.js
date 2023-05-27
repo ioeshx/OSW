@@ -33,9 +33,17 @@ document.getElementById("login_form").onsubmit = function(event){
   const formData = new FormData(form);
   const username = formData.get("username");
   const password = formData.get("password");
+  const usernameRegEX = new RegExp("^[a-zA-Z0-9]{6,15}$");
+  const passwordRegEx = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,20}$/);
   
   if(username ==="" || password===""){
     alert("用户名、密码或验证码为空，请填写")
+    return false;
+  }else if(!usernameRegEX.test(username)){
+    alert("用户名不合法");
+    return false;
+  }else if(!passwordRegEx.test(password)){
+    alert("密码不合法");
     return false;
   }
   fetch("http://localhost/login.php",{
