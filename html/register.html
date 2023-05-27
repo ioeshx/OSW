@@ -15,12 +15,13 @@
         <div>
             <label for="username">用户名</label>
             <input type="text" name="username" id="username" required>
-            <div id="u_hint">用户名长度在6-15位，只能有大小写英文字母和数字。</div>
+            <span id="u_hint">用户名长度在6-15位，只能有大小写英文字母和数字。</span>
         </div>
         <div>
             <label>密码</label>
             <input type="password" name="password" id="password" required>
-            <div id="p_hint">密码长度在8-20位，必须同时含有大小写的英文字母和数字</div> 
+            <span id="p_hint"></span><br>
+            <meter id="pwd_meter" min="0" max="6" value="0" low="3" high="5" optimum="6"></meter>
         </div>
         <div>
             <label>再次确认密码</label>
@@ -85,3 +86,4 @@
 
 <script type="text/javascript" src="../js/register.js"></script>
 <script src="../js/load_common.js"></script>
+<script src="../js/pwd_check.js"></script>
