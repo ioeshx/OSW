@@ -36,7 +36,7 @@
       $ext = pathinfo($image_name, PATHINFO_EXTENSION); //获取后缀名
       $tmp_name = $image_file['tmp_name'];              //获取上传文件在服务器上的临时文件名。
 
-      $sql_insert_product = "INSERT INTO paintings (PaintingName, AuthorName, `Description`, YearOfWork, Genre, Era, Width, Height, Cost,ImageFileName, ImageFileType,PublisherName, DatePublished) Value ('$PaintingName', '$AuthorName', '$Description', $YearOfWork, '$Genre', '$Era',$Width, $Height,$Cost , UUID(), '$ext','$PublisherName', Now());" ;
+      $sql_insert_product = "INSERT INTO paintings (PaintingName, AuthorName, `Description`, YearOfWork, Genre, Era, Width, Height, Cost,ImageFileName,PublisherName, DatePublished) Value ('$PaintingName', '$AuthorName', '$Description', $YearOfWork, '$Genre', '$Era',$Width, $Height,$Cost , CONCAT(UUID(),'.','$ext'),'$PublisherName', Now());" ;
       if($conn->query($sql_insert_product) !== true){
         http_response_code(500);
         echo json_encode(["message" =>'错误:'.$conn->error]);
@@ -49,7 +49,7 @@
         
         //上传图片到img文件夹
         $Image_upload_path = "../img/";
-        $Image_path = $Image_upload_path . $random_image_name . "." . $ext ;
+        $Image_path = $Image_upload_path . $random_image_name ;
         move_uploaded_file($tmp_name, $Image_path);
 
         http_response_code(200);

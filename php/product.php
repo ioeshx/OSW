@@ -1,38 +1,22 @@
 <?php
 
 class product{
-    public int $PaintingID;
-    public string $PaintingName;
-    public string $AuthorName;
-    public string $Description;
-    public int $YearOfWork;
-    public String $Genre;
-    public String $Era;
-    public int $Width;
-    public int $Height;
-    public float $Cost;
-    public String $ImageFileName;
-    public String $PublisherName;
+    public $PaintingID;
+    public $PaintingName;
+    public $AuthorName;
+    public $Description;
+    public $YearOfWork;
+    public $Genre;
+    public $Era;
+    public $Width;
+    public $Height;
+    public $Cost;
+    public $ImageFileName;
+    public $PublisherName;
     public $DatePublished;
-    public int $Status;
+    public $Status;
 
-    /**
-     * @param int $PaintingID
-     * @param string $PaintingName
-     * @param string $AuthorName
-     * @param string $Description
-     * @param int $YearOfWork
-     * @param string $Genre
-     * @param string $Era
-     * @param int $Width
-     * @param int $Height
-     * @param float $Cost
-     * @param string $ImageFileName
-     * @param string $PublisherName
-     * @param $DatePublished
-     * @param int $Status
-     */
-    public function __construct(int $PaintingID=0, string $PaintingName="", string $AuthorName="", string $Description="", int $YearOfWork=-1, string $Genre="", string $Era="", int $Width=-1, int $Height=-1, float $Cost=-1, string $ImageFileName="", string $PublisherName="", $DatePublished=null, int $Status=-1)
+    public function __construct($PaintingID=0, $PaintingName="", $AuthorName="", $Description="", $YearOfWork=-1, $Genre="", $Era="", $Width=-1, $Height=-1,$Cost=-1, $ImageFileName="",$PublisherName="", $DatePublished=null,$Status=-1)
     {
         $this->PaintingID = $PaintingID;
         $this->PaintingName = $PaintingName;
