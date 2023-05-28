@@ -1,8 +1,8 @@
 <?php
 
-define("server_name","localhost");
-define("sql_username", "root");
-define("sql_password", "shihongxiang");
-define("db_name", "art");
+$server_name = "localhost";
+$sql_username = "root";
+$sql_password = "shihongxiang";
+$db_name = "art";
 
 ?>
