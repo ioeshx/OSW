@@ -9,6 +9,7 @@ function fill_in_user_info(data){
     data.Country ? document.getElementById("Country").innerText += data.Country : document.getElementById("Country").innerText += "未设置";
     data.Email ? document.getElementById("Email").innerText += data.Email : document.getElementById("Email").innerText += "未设置";
     data.Phone ? document.getElementById("Phone").innerText += data.Phone : document.getElementById("Phone").innerText += "未设置";
+    document.getElementById("account_num").innerText += parseFloat(data.Account).toFixed(2);
 
     document.getElementById("modify_phone").value = data.Phone;
     document.getElementById("modify_email").value = data.Email;
