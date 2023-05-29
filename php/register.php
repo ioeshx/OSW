@@ -39,7 +39,7 @@
     } 
     //插入详细的个人信息
     $customerID = mysqli_insert_id($conn);
-    $sql_insert_info ="INSERT INTO customers (CustomerID,Gender,`Address`,Country,Phone,Email) VALUES ($customerID,'$gender','$address','$nationality','$phone','$email')";
+    $sql_insert_info ="INSERT INTO customers (CustomerID,Gender,`Address`,Country,Phone,Email, Birthday) VALUES ($customerID,'$gender','$address','$nationality','$phone','$email','$birthday')";
     if($conn->query($sql_insert_info) !== true ){
       http_response_code(500);
       echo json_encode(["message" =>'用户注册失败:'.$conn->error]);

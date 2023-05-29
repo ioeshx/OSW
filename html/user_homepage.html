@@ -7,7 +7,10 @@
 </head>
 <body>
     <header id="top_nav"></header>
+    <!-- 展示个人信息 -->
     <div id="userinfo">
+        <div>个人信息</div>
+        <div id="username">用户名：</div>
         <div id="RealName">真实姓名：</div>
         <div id="Gender">性别：</div>
         <div id="Birthday">出生日期：</div>
@@ -15,24 +18,95 @@
         <div id="Country">国籍：</div>
         <div id="Email">电子邮箱：</div>
         <div id="Phone">电话号码：</div>
+        <div id="Account">
+            <div id="account_num">账户余额:</div>
+            <label for="account_charge">账户充值</label>
+            <input type="number" id="account_charge" name="account_charge">
+        </div>
         <!-- 充值功能 -->
     </div>
+    <hr>
     <!-- 修改个人信息的部分 -->
-    <div id="modify_personal_info_div">
-        <form id="">
-            
+    <div id="modify_user_info_div">
+        <div>修改个人信息</div>
+        <form id="modify_user_info_form">
+            <div>
+                <label>请输入原密码</label>
+                <input type="password" name="origin_password" id="origin_password" required> 
+            </div>
+            <div>
+                <label>请输入修改后的密码</label>
+                <input type="password" name="password" id="password" required>
+                <span id="p_hint"></span><br>
+                <meter id="pwd_meter" min="0" max="6" value="0" low="3" high="5" optimum="6"></meter>
+            </div>
+            <div>
+                <label>再次确认密码</label>
+                <input type="password" name="confirm_password" id="confirm_password" required> 
+            </div>
+            <div>
+                <label>真实姓名</label>
+                <input type="text" id="modify_RealName" name="modify_RealName">
+            </div>
+            <div>
+                <label>性别</label>
+                <select name="modify_gender" id="modify_gender">
+                    <option value="未知" selected>未知</option>
+                    <option value="男性">男性</option>
+                    <option value="女性">女性</option>
+                    <option value="武装直升机">武装直升机</option>
+                </select>
+                <span>可选</span>
+            </div>
+            <div>
+                <label>出生日期</label>
+                <input name="modify_birthday" id="modify_birthday" type="date" >
+                <span>可选</span>
+            </div>
+            <div>
+                <label>住址</label>
+                <input type="text" name="modify_address" id="modify_address" >
+                <span>可选，长度不超过255个字符</span> 
+            </div>
+            <div>
+                <label>国籍</label>
+                <select name="modify_country" id="modify_country" >
+                    <option value="未知" selected>未知</option>
+                    <option value="中国">中国</option>
+                    <option value="美国">美国</option>
+                    <option value="俄罗斯">俄罗斯</option>
+                    <!-- TODO -->
+                </select>
+                <span>可选</span>
+            </div>
+            <div>
+                <label>手机号码</label>
+                <input type="tel" name="modify_phone" id="modify_phone">
+                <span>可选,必须是11位数字</span> 
+            </div>
+            <div>
+                <label>电子邮箱</label>
+                <input type="email" name="modify_email" id="modify_email">
+                <span>可选,需满足邮箱格式</span> 
+            </div>
+            <button id="submit_info">提交</button>    
         </form>
     </div>
 
     <!-- 展示已下单的功能 -->
-    <div>
+    <div id="show_my_order">
 
     </div>
 
     <!-- 展示我已发布的商品 -->
-    <div>
+    <div id="show_my_publication">
 
     </div>
     <footer id="copyright"></footer>
 </body>
 </html>
+
+
+<script src="../js/get_user_info.js"></script>
+<script src="../js/pwd_check.js"></script>
+<script src="../js/modify_user_info.js"></script>

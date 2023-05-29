@@ -16,13 +16,16 @@ if($_SERVER['REQUEST_METHOD']==="POST"){
     }
 
     $sql_findByUsername = "SELECT * FROM customerlogon WHERE Username = '$username' ";
+    $sql_findID = "SELECT CustomerID FROM customerlogon WHERE Username = '$username' ";
     $result = $conn->query($sql_findByUsername);
     if($result->num_rows === 1){
       $row = $result->fetch_assoc();
       $hashPassword = hash('sha256',$password . $row['Salt']);
       if($hashPassword === $row['Pass']){
+        //返回用户ID
+        $userID = $conn->query($sql_findID)->fetch_assoc()["CustomerID"];
         http_response_code(200);
-        echo json_encode(['message' => '登录成功']);
+        echo json_encode(['message' => '登录成功', 'userID' => $userID]);
         exit();
       }else{
         http_response_code(401);

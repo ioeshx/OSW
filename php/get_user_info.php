@@ -1,5 +1,6 @@
 <?php
-    require './sql.php';
+    require './mysql.php';
+    require './user.php';
     header('Content-Type: application/json');
 
     if($_SERVER['REQUEST_METHOD'] === "POST"){
@@ -21,6 +22,7 @@
             if($info_result->num_rows !== 1)
                 throw new Exception("获取用户信息时发生错误：无法获取用户信息！");    //
             $user_row = $info_result->fetch_assoc();
+            //$user_info = new user();
             //需要包装在类中吗？
             http_response_code(200);
             echo json_encode($user_row);

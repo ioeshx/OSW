@@ -67,6 +67,7 @@ document.getElementById("login_form").onsubmit = function(event){
     localStorage.setItem('username',username);
     localStorage.setItem('password',password);
     localStorage.setItem("isLogin","true");
+    localStorage.setItem('userID',data["userID"]);
     alert("登录成功");
     window.location.href = "../html/homepage.html";
   })
