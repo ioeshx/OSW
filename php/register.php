@@ -2,12 +2,12 @@
   header('Content-Type: application/json');  
   $username = $_POST["username"];
   $password = $_POST["password"];
-  $phone = $_POST["phone"];
-  $email = $_POST["email"];
-  $address = $_POST["address"];
-  $gender = $_POST["gender"];
-  $birthday = $_POST["birthday"];
-  $nationality = $_POST["nationality"];
+  $phone = $_POST["phone"]?$_POST["phone"]:"";
+  $email = $_POST["email"]?$_POST["email"]:"";
+  $address = $_POST["address"]?$_POST["address"]:"";
+  $gender = $_POST["gender"]?$_POST["gender"]:"";
+  $birthday = $_POST["birthday"]?$_POST["birthday"]:"";
+  $nationality = $_POST["nationality"]?$_POST["nationality"]:"";
  
 
   $servername = "localhost:3306";

@@ -18,21 +18,21 @@ document.addEventListener("DOMContentLoaded", createCode());
 document.getElementById("register_form").addEventListener('submit', function(Event){
   Event.preventDefault();
   //验证码的检验,先注释掉
-  var inputCode = document.getElementById("verfication_code_input").value.toUpperCase();      
+  var inputCode = document.getElementById("verification_code_input").value.toUpperCase();      
   if(inputCode.length <= 0) {   
     alert("请输入验证码！");
     return false; 
   }else if(inputCode != code ) {  
     alert("验证码输入错误！");  
     createCode();           
-    document.getElementById("verfication_code_input").value = "";
+    document.getElementById("verification_code_input").value = "";
     return false; 
   }
 
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
   var confirm_password = document.getElementById("confirm_password").value;
-  var phone = document.getElementById("phone");
+  var phone = document.getElementById("phone").value;
   var email = document.getElementById("email").value;
   var address = document.getElementById("address").value;
   var gender = document.getElementById("gender").value;
@@ -52,7 +52,8 @@ document.getElementById("register_form").addEventListener('submit', function(Eve
   }
   //用正则表达式检查输入值
   const usernameRegEX = new RegExp("^[a-zA-Z0-9]{6,15}$");
-  const passwordRegEx = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,20}$/);
+  // const passwordRegEx = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,20}$/);
+  const passwordRegEx = new RegExp(/^[a-zA-Z\d]{8,20}$/);
   const phoneRegEX = new RegExp(/^[a-zA-Z0-9]{11}$/);
   const emailRegex = new RegExp(/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/);
   if(!usernameRegEX.test(username)){
@@ -61,10 +62,10 @@ document.getElementById("register_form").addEventListener('submit', function(Eve
   }else if(!passwordRegEx.test(password)){
     alert("密码不合法！")
     return false;
-  }else if(!phoneRegEX.test(phone)){
+  }else if(phone.length != 0 && !phoneRegEX.test(phone)){
     alert("手机号格式不合法！")
     return false;
-  }else if(!emailRegex.test(email)){
+  }else if(email.length != 0 && !emailRegex.test(email)){
     alert("邮箱格式不合法！")
     return false;
   }
@@ -76,13 +77,8 @@ document.getElementById("register_form").addEventListener('submit', function(Eve
   .then(Response =>{
     if (Response.status === 200) {
       return Response.json();
-    } else if (Response.status === 401) {
-      throw new Error("用户名已被注册！");
-    } else if (Response.status === 500) {
-      throw new Error("服务器错误，请稍后再试！");
-    } else {
-      throw new Error("未知错！");
-    }
+    } else 
+      throw new Error(Response.json().message);
   })
   .then(data=>{
     alert("注册成功！")

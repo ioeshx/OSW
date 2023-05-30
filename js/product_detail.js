@@ -51,6 +51,7 @@ document.getElementById("add_to_cart").addEventListener("click", function(){
     const formData = new FormData();
     formData.append("userID",localStorage.getItem("userID"));
     formData.append("PaintingID", searchParams.get("PaintingID"));
+    formData.append("username", localStorage.getItem("username"));
     fetch("http://localhost/add_to_cart.php",{
         method:"POST",
         body:formData
