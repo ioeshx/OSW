@@ -72,7 +72,7 @@ document.getElementById("login_form").onsubmit = function(event){
     window.location.href = "../html/homepage.html";
   })
   .catch(error => {
-    alert(error);
+    alert(error.message);
   });
   
   return true;

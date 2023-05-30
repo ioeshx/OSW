@@ -165,15 +165,15 @@ function display_comment(data){
         var like_button = document.createElement("button");
         var img = document.createElement("img");
         like_button.addEventListener("click", like_and_cancel_like);
-        // like_button.value = "0";
-        // img.src="../resource/unlike_big.png";
+        like_button.value = "0";
+        img.src="../resource/unlike_big.png";
         like_button.appendChild(img);
         comment_div.appendChild(like_button);
         //把父块附加到更大的div下
         all_comments_div.appendChild(comment_div);
     }
     //根据用户是否显示是否点赞过
-    get_user_like();
+    //get_user_like();
 };
 
 

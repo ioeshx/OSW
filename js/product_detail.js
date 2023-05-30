@@ -38,3 +38,33 @@ function get_product_detail_byID(){
 window.addEventListener("load", function () {
     get_product_detail_byID();
 })
+
+document.getElementById("add_to_cart").addEventListener("click", function(){
+    if(localStorage.getItem("isLogin") != "true"){
+        alert("你尚未登录，无法加入购物车");
+        return false;
+    }else if(document.getElementById("Status").innerText === "是"){
+        alert("该商品已被售出，无法购买");
+        return false;
+    }
+    const searchParams =new URLSearchParams(window.location.search);    
+    const formData = new FormData();
+    formData.append("userID",localStorage.getItem("userID"));
+    formData.append("PaintingID", searchParams.get("PaintingID"));
+    fetch("http://localhost/add_to_cart.php",{
+        method:"POST",
+        body:formData
+    }).then(Response =>{
+        if(Response.ok)
+            return Response.json();
+        else
+            throw new Error(Response.json().message);
+    }).then(data =>{
+        alert(data.message);
+        //window.location.reload();
+    })
+    .catch(e => {
+        alert(e);
+    });
+
+})
