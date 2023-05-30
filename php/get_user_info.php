@@ -7,7 +7,6 @@
         try{
             $username = $_POST["username"];
             $conn = mysqli_connect($server_name, $sql_username, $sql_password, $db_name);
-            // 检查连接是否成功
             if ($conn->connect_error)
                 throw new Exception("数据库连接失败：" . $conn->connect_error);
             //获取用户ID
@@ -28,7 +27,7 @@
             echo json_encode($user_row);
 
         }catch(Exception $e){
-            http_response_code(404);
+            http_response_code(500);
             echo json_encode(['message' => $e->getMessage()]);
             exit();
         }

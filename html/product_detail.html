@@ -21,7 +21,20 @@
         <div id="Status">是否已售出：</div>
         <span id="Cost">价格：</span><span> RMB</span>
     </div>
+    <hr>
 
+    <div>评论区</div>
+    <label>请在此输入你的评论</label><br>
+    <textarea id="comment_textarea"></textarea><br>
+    <label>在此选择你要回复的评论ID</label>
+    <select id="comment_select">
+        <option value="-1" selected>不回复</option>
+    </select><br>
+    <button id="submit_comment">发表评论</button>
+    <p>所有评论</p>
+    <div id="all_comments_on_product">
+        
+    </div>
     <footer id="copyright"></footer>
 
 </body>
@@ -29,3 +42,6 @@
 
 <script src="../js/load_common.js"></script>
 <script src="../js/product_detail.js"></script>
+<script src="../js/submit_comment.js"></script>
+<script src="../js/get_product_comment.js"></script>
+<script src="../js/display_liked.js"></script>
