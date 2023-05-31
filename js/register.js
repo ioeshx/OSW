@@ -15,8 +15,24 @@ function createCode(){
 
 document.addEventListener("DOMContentLoaded", createCode());
 
+var registser_button = document.getElementById('regitser_button');
+var isButtonDisabled = false;
+var waitingTime = 500; // 设置等待时间为 0.5 秒
+
 document.getElementById("register_form").addEventListener('submit', function(Event){
   Event.preventDefault();
+
+  if (isButtonDisabled) {
+    alert('请勿频繁点击按钮！');
+    return;
+  }
+  isButtonDisabled = true;
+  registser_button.setAttribute('disabled', true);
+  setTimeout(function() {
+    isButtonDisabled = false;
+    registser_button.removeAttribute('disabled');
+  }, waitingTime);
+
   //验证码的检验,先注释掉
   var inputCode = document.getElementById("verification_code_input").value.toUpperCase();      
   if(inputCode.length <= 0) {   
@@ -92,4 +108,6 @@ document.getElementById("register_form").addEventListener('submit', function(Eve
   })
 
 });
+
+
 

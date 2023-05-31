@@ -15,8 +15,26 @@ function createCode(){
 
 document.addEventListener("DOMContentLoaded",createCode());
 
+var loginButton = document.getElementById('login_button');
+var isButtonDisabled = false;
+var waitingTime = 500; // 设置等待时间为 3 秒
+
 document.getElementById("login_form").onsubmit = function(event){
   event.preventDefault();
+
+  if (isButtonDisabled) {
+    alert('请勿频繁点击按钮！');
+    return;
+  }
+
+  isButtonDisabled = true;
+  loginButton.setAttribute('disabled', true);
+
+  setTimeout(function() {
+    isButtonDisabled = false;
+    loginButton.removeAttribute('disabled');
+  }, waitingTime);
+
   //验证码的检验
   var inputCode = document.getElementById("verification_code_input").value.toUpperCase();      
   if(inputCode.length <= 0) {   
@@ -77,3 +95,20 @@ document.getElementById("login_form").onsubmit = function(event){
   
   return true;
 };
+
+
+
+// loginButton.addEventListener('click', function() {
+//   if (isButtonDisabled) {
+//     alert('请勿频繁点击按钮！');
+//     return;
+//   }
+
+//   isButtonDisabled = true;
+//   loginButton.setAttribute('disabled', true);
+
+//   setTimeout(function() {
+//     isButtonDisabled = false;
+//     loginButton.removeAttribute('disabled');
+//   }, waitingTime);
+// })

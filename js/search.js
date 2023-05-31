@@ -1,3 +1,10 @@
+function display_search_result(data){
+    
+    if(data.length == 0){
+
+    }
+}
+
 const checkboxes = document.querySelectorAll('input[type=checkbox]');
 for (let i = 0; i < checkboxes.length; i++) {
   checkboxes[i].addEventListener('click', function() {
@@ -21,6 +28,27 @@ document.getElementById("search_button").addEventListener("click",function(){
         alert("你尚未选择按作品还是按作者搜索！");
         return;
     }else{
+        const formData = new FormData();
+        formData.append("search",search_input_text);
+        if(search_by_painting.checked)
+            formData.append("type", 1);
+        else
+            formData.append("type", 2);
         
+        fetch("http://localhost:80/search.php",{
+            method:"POST",
+            body:formData
+        }).then(Response =>{
+            if(Response.ok)
+                return Response.json();
+            else
+                throw new Error(Response.json().message);
+        }).then(data =>{
+            alert("搜索成功！");
+            display_search_result(data);            
+        })
+        .catch(e=>{
+            console.error(e);
+        });
     }
 })

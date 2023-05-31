@@ -8,7 +8,7 @@ fetch("http://localhost/",{
         return Response.json();
     else
         throw new Error(Response.json().message);
-}).then(message =>{
+}).then(data =>{
     
     
 })
