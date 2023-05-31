@@ -1,8 +1,8 @@
-function purchase_order(btn){
-    var OrderID = btn.id;
+function purchase_order(){
+    var OrderID = this.id;
     const formData = new FormData();
     formData.append("OrderID", OrderID);
-    fetch("http://localhost/",{
+    fetch("http://localhost/purchase_order.php",{
         method:"POST",
         body:formData
     }).then(Response =>{
@@ -11,18 +11,19 @@ function purchase_order(btn){
         else
             throw new Error(Response.json().message);
     }).then(message =>{
-    
+        alert("购买成功！");
+        window.location.reload();
     })
     .catch(e=>{
         console.error(e);
     });
 }
 
-function delete_order(btn){
-    var OrderID = btn.id;
+function delete_order(){
+    var OrderID = this.id;
     const formData = new FormData();
     formData.append("OrderID", OrderID);
-    fetch("http://localhost/",{
+    fetch("http://localhost/delete_order.php",{
         method:"POST",
         body:formData
     }).then(Response =>{
@@ -31,7 +32,8 @@ function delete_order(btn){
         else
             throw new Error(Response.json().message);
     }).then(message =>{
-        
+        alert("删除成功！");
+        window.location.reload();
     })
     .catch(e=>{
         console.error(e);
@@ -39,14 +41,13 @@ function delete_order(btn){
 }
 
 function display_orders(data){
+    var valid_order_num = 0;
     const all_orders_div =document.getElementById("all_orders");
-    if(data.length == 0){
-        var no_order_p = document.createElement("p");
-        no_order_p.textContent = "购物车中还没有任何商品……";
-        all_orders_div.appendChild(no_order_p);
-        return;
-    }
+
     for(var i = 0; i<data.length; i++){
+        if(data[i].status == 1) //已购买的订单不予展示
+            continue;
+        else    valid_order_num ++;
         //创建父元素
         var orderItem = document.createElement("div");
         orderItem.id = data[i].OrderID;
@@ -81,16 +82,22 @@ function display_orders(data){
         var purchase_button = document.createElement("button")
         purchase_button.id = data[i].OrderID;
         purchase_button.innerText = "购买"
-        purchase_button.addEventListener("onclick", purchase_order);
+        purchase_button.addEventListener("click", purchase_order);
         orderItem.appendChild(purchase_button);
         //从购物车删除的按钮
         var delete_button = document.createElement("button")
         delete_button.id = data[i].OrderID;
         delete_button.innerText = "删除";
-        delete_button.addEventListener("onclick", delete_order);
+        delete_button.addEventListener("click", delete_order);
         orderItem.appendChild(delete_button);
         //附加到总的下面
         all_orders_div.appendChild(orderItem);
+    }
+    if(valid_order_num == 0){
+        var no_order_p = document.createElement("p");
+        no_order_p.textContent = "购物车中还没有任何商品……";
+        all_orders_div.appendChild(no_order_p);
+        return;
     }
 
 }

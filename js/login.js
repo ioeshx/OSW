@@ -34,8 +34,8 @@ document.getElementById("login_form").onsubmit = function(event){
   const username = formData.get("username");
   const password = formData.get("password");
   const usernameRegEX = new RegExp("^[a-zA-Z0-9]{6,15}$");
-  const passwordRegEx = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,20}$/);
-  
+  //const passwordRegEx = new RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,20}$/);
+  const passwordRegEx = new RegExp(/^[a-zA-Z\d]{8,20}$/);
   if(username ==="" || password===""){
     alert("用户名、密码或验证码为空，请填写")
     return false;

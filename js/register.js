@@ -77,8 +77,11 @@ document.getElementById("register_form").addEventListener('submit', function(Eve
   .then(Response =>{
     if (Response.status === 200) {
       return Response.json();
-    } else 
-      throw new Error(Response.json().message);
+    }else if(Response.status === 401){
+      throw new Error("用户名已被注册");
+    }else if(Response.status === 500){
+      throw new Error("注册失败，请重试");
+    }
   })
   .then(data=>{
     alert("注册成功！")
