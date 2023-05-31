@@ -9,7 +9,7 @@ fetch("http://localhost/",{
     else
         throw new Error(Response.json().message);
 }).then(message =>{
-
+    
     
 })
 .catch(e=>{
