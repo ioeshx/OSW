@@ -25,14 +25,26 @@ function show_5_product(){
     })
 }
 
-
 window.addEventListener("load", function(){
     show_5_product();
 })
 
-for(let i=0; i<5; i++){
-    document.getElementById("product_detail_" + (i+1)).addEventListener("click", function(event){
-        var id = event.target.getAttribute("value");
-        
-    })
-}
+// for(let i=0; i<5; i++){
+//     document.getElementById("product_detail_" + (i+1)).addEventListener("click", function(event){
+//         var id = event.target.getAttribute("value");
+//     })
+// }
+
+
+
+// const checkboxes = document.querySelectorAll('input[type=checkbox]');
+// for (let i = 0; i < checkboxes.length; i++) {
+//   checkboxes[i].addEventListener('click', function() {
+//     if (this.checked) {      // 当前选框被选中时,将其他选框的状态设为未选中
+//       for (let j = 0; j < checkboxes.length; j++) {
+//         if (checkboxes[j] !== this) 
+//           checkboxes[j].checked = false;        
+//       }
+//     }
+//   });
+// }
