@@ -1,6 +1,6 @@
 var search_result;
 
-const searchResult = []; // 存储所有搜索结果
+var searchResult = []; // 存储所有搜索结果
 let currentPage = 1; // 当前页码
 const pageSize = 5; // 每页显示条数
 let totalPage = 1; // 总页数
@@ -251,6 +251,8 @@ document.getElementById("search_button").addEventListener("click",function(){
             else
                 throw new Error(Response.json().message);
         }).then(data =>{
+            document.getElementById("pagination").innerHTML = "";
+            searchResult = [];
             search_result = data;
             display_search_result(data);            
         })
@@ -274,6 +276,8 @@ function get_all_paintings(){
         else
             alert(Response.json().message);
     }).then(data => {
+        document.getElementById("pagination").innerHTML = "";
+        searchResult = [];
         search_result = data;
         display_search_result(data)
     })
@@ -299,21 +303,28 @@ function SortByCost(a,b){
 }
 
 document.getElementById("sort_by_Author").addEventListener("click",function(){
+    document.getElementById("pagination").innerHTML = "";
+    searchResult = [];
     search_result.sort(SortByAuthor);
     display_search_result(search_result);
 })
 
 document.getElementById("sort_by_PaitingName").addEventListener("click",function(){
+    document.getElementById("pagination").innerHTML = "";
+    searchResult = [];
     search_result.sort(SortByPaintingName);
     display_search_result(search_result);
 })
 
 document.getElementById("sort_by_Cost").addEventListener("click",function(){
+    document.getElementById("pagination").innerHTML = "";
+    searchResult = [];
     search_result.sort(SortByCost);
     display_search_result(search_result);
 })
 
 document.getElementById("sort_by_YearOfWork").addEventListener("click",function(){
+    document.getElementById("pagination").innerHTML = "";
     search_result.sort(SortByYearOfWork);
     display_search_result(search_result);
 })

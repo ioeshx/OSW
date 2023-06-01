@@ -1,0 +1,73 @@
+/* 导航栏样式 */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    height: 70px;
+    padding: 0px 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  nav a {
+    color: #333;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  nav a:hover {
+    color: #f44336;
+  }
+  
+  /* 登录注册区域样式 */
+  #login_register {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #f7f7f7;
+    height: 70px;
+    padding: 0px 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  #login_register a {
+    color: #333;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 30px;
+  }
+  #login_register a:hover {
+    color: #f44336;
+  }
+  #show_username {
+    margin-right: 20px;
+    font-size: 16px;
+  }
+  
+  /* 音频控件样式 */
+  audio {
+    margin-left: 20px;
+    width: 150px;
+    height: 32px;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+  }
+  audio:hover {
+    border-color: #f44336;
+  }
+  
+  /* 响应式设计 */
+  @media screen and (max-width: 768px) {
+    nav {
+      padding: 0px 15px;
+    }
+    #login_register,
+    #login_register a {
+      margin-left: 10px;
+      margin-right: 10px;
+      font-size: 14px;
+    }
+    audio {
+      margin-left: 10px;
+    }
+  }

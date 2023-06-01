@@ -98,17 +98,3 @@ document.getElementById("login_form").onsubmit = function(event){
 
 
 
-// loginButton.addEventListener('click', function() {
-//   if (isButtonDisabled) {
-//     alert('请勿频繁点击按钮！');
-//     return;
-//   }
-
-//   isButtonDisabled = true;
-//   loginButton.setAttribute('disabled', true);
-
-//   setTimeout(function() {
-//     isButtonDisabled = false;
-//     loginButton.removeAttribute('disabled');
-//   }, waitingTime);
-// })

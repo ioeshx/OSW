@@ -1,12 +1,6 @@
 function modify_user_info(){
     var password = document.getElementById("password").value;
     var confirm_password = document.getElementById("confirm_password").value;
-    // var phone = document.getElementById("modify_phone").value;
-    // var email = document.getElementById("modify_email").value;
-    // var address = document.getElementById("modify_address").value;
-    // var gender = document.getElementById("modify_gender").value;
-    // var birthday = document.getElementById("modify_birthday").value;
-    // var country = document.getElementById("modify_country").value;
     const formData = new FormData(document.getElementById("modify_user_info_form"));
     formData.append("ID",localStorage.getItem("userID"));
 

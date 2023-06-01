@@ -1,45 +1,163 @@
-*{
-    margin:0%;
-    padding:0%;
-}
-
+/* 注册页面整体布局 */
 body {
-    background-color: whitesmoke;
-    font-family: "Microsoft YaHei",sans-serif;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    font-size: 16px;
+    font-family: 'Microsoft Yahei', Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    }
     
-}
-
-
-#register_table{
+    /* #top_nav {
+    background-color: #2ECCE5;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    height: 50px;
     position: relative;
-    top: 30px;
-    background-color: lightseagreen;
+    } */
+    
+    #register_table {
+    margin: 30px auto;
+    width: 60%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    #register_table div {
+    font-size: 20px;
+    font-weight: bold;
     text-align: center;
-}
+    margin-bottom: 20px;
+    }
+    
+    #register_form div {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    }
+    
+    #register_form label {
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+    margin-right: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+    }
+    
+    #register_form input[type="text"],
+    #register_form input[type="password"],
+    #register_form input[type="tel"],
+    #register_form input[type="email"],
+    #register_form select,
+    #register_form input[type="date"] {
+    border: 1px solid #ccc;
+    padding: 8px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+    
+    #register_form span {
+    margin-left: 10px;
+    font-size: 12px;
+    color: #999;
+    }
+    
+    #register_form meter {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: block;
+    }
+    
+    
+    
+    #register_form input[type="submit"] {
+    display: block;
+    margin: auto;
+    background-color: #2ECCE5;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    }
+    
+    #login_link {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    }
+    
+    /* a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #333;
+    } */
+    
+    a {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        color: #007bff;
+        text-decoration: none;
+        }
+        
 
-#register_table>div {
-    font-size: 3em;
-}
+    a:hover {
+    text-decoration: underline;
+    }
+    
+    /* 验证码样式 */
+    #verification_code {
+    margin-left: 20px;
+    cursor: pointer;
+    }
+    
+    /* 密码强度提示 */
+    #p_hint {
+    color: #f00;
+    }
+    
+    /* 弹出框居中 */
+    .alert-info{
+    width:300px;
+    height:50px;
+    line-height:50px;
+    border-radius:5px;
+    text-align:center;
+    position:fixed;
+    top:50%;
+    left:50%;
+    margin-top:-25px;
+    margin-left:-150px;
+    font-size:16px;
+    font-weight:bold;
+    background-color:rgba(0, 0, 0, 0.5);
+    color:#fff;
+    z-index:2000;
+    }
+    
+    /* 禁用按钮样式 */
+    input[disabled]{
+    opacity:0.5;
+    cursor:not-allowed;
+    }
 
-#register_table>form>div{
-    font-size: 1.5em;
-    text-align: left;
-}
-
-#register_table button{
-    font-size: large;
-}
-
-#verification_code{ 
-    font-family:Arial,宋体; 
-    font-style:italic; 
-    color:green; 
-    border:0; 
-    padding:2px 3px; 
-    letter-spacing:3px; 
-    font-weight:bolder; 
-}
+    #verification_code {
+        width: 80px;
+        height: 34px;
+        line-height: 28px;
+        font-size: 14px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        }

@@ -1,0 +1,238 @@
+/* 页面布局 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#userinfo {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex; /* 弹性布局 */
+    flex-direction: column; /* 竖向排列 */
+    align-items: center; /* 垂直居中 */
+    justify-content: flex-start; /* 左对齐 */
+}
+
+#userinfo p {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center; /* 居中 */
+}
+
+#userinfo div {
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: start; /* 左对齐 */
+}
+
+#userinfo label {
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#userinfo input[type="number"] {
+    width: 100px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#userinfo button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#userinfo button:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 768px) {
+    #userinfo {
+        width: 100%;
+        border-radius: 0px;
+    }
+}
+
+
+    #modify_user_info_div {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f7f7f7;
+        border-radius: 5px;
+        /* 新增代码：添加外边框，边框颜色为灰色，边框宽度为1px */
+        border: 1px solid #ccc;
+        /* 新增代码：设置内容居中对齐 */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      #modify_user_info_form {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      #modify_user_info_form div {
+        margin-bottom: 10px;
+      }
+      
+      #modify_user_info_form label {
+        display: inline-block;
+        width: 120px;
+        font-size: 16px;
+        font-weight: bold;
+        vertical-align: middle;
+      }
+      
+      #modify_user_info_form input,
+      #modify_user_info_form select {
+        display: inline-block;
+        width: 200px;
+        padding: 5px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        vertical-align: middle;
+      }
+      
+      #modify_user_info_form input[type="date"] {
+        width: 212px; /* 调整宽度以适应 Safari 浏览器 */
+      }
+      
+      #modify_user_info_form button {
+        margin-top: 20px;
+        margin-left: 120px;
+        padding: 10px;
+        font-size: 18px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        /* 新增代码：设置按钮宽度为120px */
+        width: 120px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      #modify_user_info_form span {
+        margin-left: 5px;
+        font-size: 14px;
+        color: #666;
+      }
+      
+      #p_hint {
+        margin-left: 10px;
+        font-size: 14px;
+        color: #ff0000;
+      }
+      
+      #pwd_meter {
+        margin-top: 5px;
+        margin-left: 120px;
+        height: 10px;
+      }
+
+
+#show_my_order {
+  margin: 20px auto;
+  width: 80%;
+  text-align: center;
+}
+
+#show_my_order p {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#no_orders_div {
+  font-size: 16px;
+  margin-top: 20px;
+  color: #999;
+}
+
+/* .orderItem {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order_paintingname_div {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.order_image {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+} */
+
+
+#show_my_publication {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 50px auto;
+  width: 80%;
+}
+
+#show_my_publication p {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.orderItem {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 30%;
+  min-width: 300px;
+  box-sizing: border-box;
+}
+
+.order_paintingname_div {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.order_image {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  max-width: 100%;
+  height: auto;
+}
