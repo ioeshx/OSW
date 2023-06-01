@@ -41,6 +41,11 @@ function getSearchResultsByPage(page) {
   const startIndex = (page - 1) * pageSize;
   const endIndex = Math.min(startIndex + pageSize, searchResult.length);
 
+  var result_num_div = document.createElement("div");
+  result_num_div.id = "result_num_div";
+  result_num_div.innerText = "有" + (searchResult.length) + "条结果";
+  result_div.appendChild(result_num_div);
+
   for (let i = startIndex; i < endIndex; i++) {
     // 创建父元素
     var SearchItem = document.createElement("div");
@@ -59,26 +64,25 @@ function getSearchResultsByPage(page) {
     search_paintingname_div.id =
       "search_paintingname_div_" + searchResult[i].PaintingID;
     search_paintingname_div.class = "search_paintingname_div";
-    search_paintingname_div.textContent = searchResult[i].PaintingName;
+    search_paintingname_div.textContent = "艺术品名称：" + searchResult[i].PaintingName;
     SearchItem.appendChild(search_paintingname_div);
     // 展示作者名称
     var search_author_div = document.createElement("div");
     search_author_div.id = "search_author_div_" + searchResult[i].PaintingID;
     search_author_div.class = "search_author_div";
-    search_author_div.textContent = searchResult[i].AuhtorName;
+    search_author_div.textContent = "作者名称：" + searchResult[i].AuthorName;
     SearchItem.appendChild(search_author_div);
     // 展示价格
     var search_cost_div = document.createElement("div");
     search_cost_div.id = "search_cost_div_" + searchResult[i].PaintingID;
     search_cost_div.class = "search_cost_div";
-    search_cost_div.textContent = searchResult[i].Cost;
+    search_cost_div.textContent = "价格：" + searchResult[i].Cost + " RMB";
     SearchItem.appendChild(search_cost_div);
     // 展示简介
     var search_description_div = document.createElement("div");
-    search_description_div.id =
-      "search_description_div_" + searchResult[i].PaintingID;
+    search_description_div.id = "search_description_div_" + searchResult[i].PaintingID;
     search_description_div.class = "search_description_div";
-    search_description_div.textContent = searchResult[i].Description;
+    search_description_div.textContent = "简介:" + searchResult[i].Description;
     SearchItem.appendChild(search_description_div);
     // 添加按钮
     var detail_btn = document.createElement("button");

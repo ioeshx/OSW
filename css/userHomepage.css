@@ -85,17 +85,17 @@ body {
         align-items: center;
       }
       
-      #modify_user_info_form {
+      #modify_user_info_sec {
         margin-top: 20px;
         display: flex;
         flex-direction: column;
       }
       
-      #modify_user_info_form div {
+      #modify_user_info_sec div {
         margin-bottom: 10px;
       }
       
-      #modify_user_info_form label {
+      #modify_user_info_sec label {
         display: inline-block;
         width: 120px;
         font-size: 16px;
@@ -103,8 +103,8 @@ body {
         vertical-align: middle;
       }
       
-      #modify_user_info_form input,
-      #modify_user_info_form select {
+      #modify_user_info_sec input,
+      #modify_user_info_sec select {
         display: inline-block;
         width: 200px;
         padding: 5px;
@@ -114,11 +114,11 @@ body {
         vertical-align: middle;
       }
       
-      #modify_user_info_form input[type="date"] {
+      #modify_user_info_sec input[type="date"] {
         width: 212px; /* 调整宽度以适应 Safari 浏览器 */
       }
       
-      #modify_user_info_form button {
+      #modify_user_info_sec button {
         margin-top: 20px;
         margin-left: 120px;
         padding: 10px;
@@ -132,7 +132,7 @@ body {
         cursor: pointer;
       }
       
-      #modify_user_info_form span {
+      #modify_user_info_sec span {
         margin-left: 5px;
         font-size: 14px;
         color: #666;
@@ -164,33 +164,10 @@ body {
 }
 
 #no_orders_div {
-  font-size: 16px;
+  font-size: 20px;
   margin-top: 20px;
   color: #999;
 }
-
-/* .orderItem {
-  margin-top: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.order_paintingname_div {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.order_image {
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-} */
-
 
 #show_my_publication {
   display: flex;
@@ -207,6 +184,12 @@ body {
   margin-bottom: 20px;
   text-align: center;
   width: 100%;
+}
+
+#no_publication_div {
+  font-size: 20px;
+  margin-top: 20px;
+  color: #999;
 }
 
 .orderItem {

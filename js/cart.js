@@ -9,13 +9,13 @@ function purchase_order(){
         if(Response.ok)
             return Response.json();
         else
-            throw new Error(Response.json().message);
-    }).then(message =>{
-        alert("购买成功！");
+            throw new Error("购买失败");
+    }).then(data =>{
+        alert(data.message);
         window.location.reload();
     })
     .catch(e=>{
-        console.error(e);
+        alert(e);
     });
 }
 

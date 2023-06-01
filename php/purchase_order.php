@@ -20,7 +20,7 @@
             $sql_check_painting_status = "SELECT * FROM paintings WHERE PaintingID=$PaintingID AND `Status`=1 ";
             $painting_result = $conn->query($sql_check_painting_status);
             if($painting_result->num_rows == 1){
-                http_response_code(400);
+                http_response_code(200);
                 echo json_encode(['message' => "该商品已被购买"]);
                 exit();
             }
@@ -31,14 +31,14 @@
             $acoount_result = $conn->query($sql_check_user_account);
             $account = $acoount_result->fetch_assoc()["Account"];
             if($account < $Cost){
-                http_response_code(401);
+                http_response_code(200);
                 echo json_encode(['message' => "账户余额不足！"]);
                 exit();
             }
             //购买，账户扣钱，设置订单状态
             $sql_set_my_order = "UPDATE orders SET `status`=1 WHERE OrderID=$OrderID ";     //设置订单也被购买
             //$sql_set_others_order = "";                                   
-            $sql_set_painting_status = "UPDATE paintings SET status=1 WHERE PaintingID=$PaintingID";    //设置商品已被购买
+            $sql_set_painting_status = "UPDATE paintings SET `Status`=1 WHERE PaintingID=$PaintingID";    //设置商品已被购买
             $sql_sub_account = "UPDATE customers SET Account=Account-$Cost WHERE CustomerID=$userID";              
             $conn->query($sql_set_my_order);
             $conn->query($sql_set_painting_status);
@@ -46,7 +46,7 @@
             //发布者账户收入
             $sql_get_publisher_name = "SELECT PublisherName FROM paintings WHERE PaintingID=$PaintingID";
             $publisher_name = ($conn->query($sql_get_publisher_name)->fetch_assoc())["PublisherName"];
-            $sql_get_publisherID = "SELECT CustomerID FROM customerlogon WHERE UserName='0$publisher_name'";
+            $sql_get_publisherID = "SELECT CustomerID FROM customerlogon WHERE UserName='$publisher_name'";
             $publisherID = ($conn->query($sql_get_publisherID)->fetch_assoc())["CustomerID"];
             $sql_add_account = "UPDATE customers SET Account=Account+$Cost WHERE CustomerID=$publisherID";
             $conn->query($sql_add_account);
