@@ -4,20 +4,31 @@
     <title>搜索</title>
     <meta charset="UTF-8">
     <link rel="stylesheet"  href="../css/common.css">
+    <link rel="stylesheet" href="../css/pagination.css">
     <script src="../js/load_common.js"></script>
 </head>
 <body>
     <header id="top_nav"></header>
 
     <div id="searcch_container">
-        <form id="search_form">
-            <input type="text" id="search_input" name="search_input" ><br>
-            <input type="checkbox" id="checkbox_painting" name="checkbox_painting" class="search_checkbox"  checked>
-                <label for="checkbox_painting">按作品名搜索</label><br>
-            <input type="checkbox" id="checkbox_author" name="checkbox_author" class="search_checkbox">
-                <label for="checkbox_author">按作者名搜索</label><br>
-            <button type="submit" id="search_button" name="search_button">搜索</button>
-        </form>
+        <input type="text" id="search_input" name="search_input" ><br>
+        <input type="checkbox" id="checkbox_painting" name="checkbox_painting" class="search_checkbox"  checked>
+            <label for="checkbox_painting">按作品名搜索</label><br>
+        <input type="checkbox" id="checkbox_author" name="checkbox_author" class="search_checkbox">
+            <label for="checkbox_author">按作者名搜索</label><br>
+        <button type="submit" id="search_button" name="search_button">搜索</button>
+    </div>
+    <div id="sort_button">
+        <button id="sort_by_Author">按作者名排序</button>
+        <button id="sort_by_PaitingName">按作品名排序</button>
+        <button id="sort_by_Cost">按价格排序</button>
+        <button id="sort_by_YearOfWork">按年份排序</button>    
+    </div>
+    <div id="result_div">
+        
+    </div>
+    <div id="pagination">
+        <!-- 分页控件区域 -->
     </div>
 
     <footer id="copyright"></footer>
