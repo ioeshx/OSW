@@ -19,7 +19,7 @@ function delete_comment(Event){
     });
 }
 
-function like_and_cancel_like(Event){
+function like_and_cancel_like(){
     const type = this.value;
     const commentID = this.parentNode.id;
     const formData = new FormData();
@@ -41,19 +41,19 @@ function like_and_cancel_like(Event){
         console.error(e);
     });
 
-    if(btn.value == 0){
-        btn.src = "../resource/like_big.png";
-        btn.value == 1;
+    if(this.value == 0){
+        this.innerText = "已点赞";
+        this.value = 1;
     }
     else{
-        btn.src = "../resource/unlike_big.png";
-        btn.value == 0;
+        this.innerText = "未点赞";
+        this.value = 0;
     }
     window.location.reload();  
 }
 
 // 获取用户所有点赞过的评论ID
-function get_user_like(userID){
+function get_user_like(){
     const formData = new FormData();
     var userID =localStorage.getItem("userID");
     formData.append("userID",userID);
@@ -66,36 +66,19 @@ function get_user_like(userID){
         else
             throw new Error(Response.json().message);
     }).then(data =>{
-        const buttons = document.querySelectorAll(".comment_div>button");
-        buttons.forEach(button =>{
-            if(data.includes(button.parentNode.id)){
-                button.value = "1";
-                button.getElementsByTagName("img")[0].src = "../resource/like.big.png";
+        data = data.map(str=>Number(str));
+        var buttons = Array.from(document.querySelectorAll('.like_button'));
+        buttons.forEach((button) => {
+            if(data.includes(Number(button.parentElement.id))){
+                button.value = 1;
+                button.innerHTML = "已点赞";
             }
-        })
+        });
     })
     .catch(e=>{
         console.error(e);
     });
 }
-
-// async function get_user_like(userID){
-//     const formData = new FormData();
-//     formData.append("userID",userID);
-//     try{    
-//     const response = await fetch("http://localhost/get_user_like.php",{
-//         method:"POST",
-//         body:formData
-//     });
-//     if(response.ok){
-
-//     }else
-//         throw new Error(response.json().message);
-//     }catch(e){
-//         console.error(e);
-//     }
-// }
-
 
 function display_comment(data){
     var all_comments_div = document.getElementById("all_comments_on_product");
@@ -161,25 +144,21 @@ function display_comment(data){
         like_num.setAttribute("class", "like_num")
         like_num.textContent = data[i].likesNum + "次点赞";
         comment_div.appendChild(like_num);
-        //设置点赞图标
+        //设置点赞按钮
         var like_button = document.createElement("button");
-        var img = document.createElement("img");
+        like_button.setAttribute("class", "like_button");
+        like_button.innerText = "未点赞";
         like_button.addEventListener("click", like_and_cancel_like);
         like_button.value = "0";
-        img.src="../resource/unlike_big.png";
-        like_button.appendChild(img);
         comment_div.appendChild(like_button);
         //把父块附加到更大的div下
         all_comments_div.appendChild(comment_div);
     }
     //根据用户是否显示是否点赞过
-    //get_user_like();
+    
 };
 
-
-
 const url = `http://localhost/get_product_comment.php${location.search}`
-
 
 function get_product_comment(){
     fetch(url,{
@@ -189,7 +168,10 @@ function get_product_comment(){
                 return Response.json();
             else
                 throw new Error(Response.json().message);
-        }).then(data => display_comment(data))
+        }).then(data => {
+            display_comment(data);
+            get_user_like();
+        })
         .catch(e=>{
             console.error(e);
     });

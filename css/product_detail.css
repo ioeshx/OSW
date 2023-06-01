@@ -1,0 +1,136 @@
+body {
+    margin: 0; 
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  
+  #product_detail {
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  #product_detail img {
+    margin: 20px;
+    box-shadow: 1px 1px 3px grey;
+  }
+  
+  #all_comments_on_product {
+    margin: auto;
+    width: 80%;
+  }
+  
+  .comment_div {
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px grey;
+  }
+  
+  .comment_ID {
+    font-weight: bold;
+  }
+  
+  .username_of_comment, .response_comment {
+    margin-top: 5px;
+    color: grey;
+  }
+  
+  .comment_str {
+    margin: 10px 0;
+  }
+  
+  .delete_button {
+    margin: 10px 0;
+  }
+  
+  .like_num {
+    margin-top: 5px;
+    color: grey;
+  }
+  
+  /* .like_button {
+    margin: 10px 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: grey;
+  }
+  
+  .like_button:hover, #add_to_cart:hover, #submit_comment:hover {
+    color: #333;
+  } */
+  .like_button {
+    font-size: 16px;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    background-color: #e9e9e9;
+    cursor: pointer;
+    border-radius: 5px;
+    color: grey;
+    transition: all 0.2s ease;
+  }
+  
+  .like_button:hover {
+    color: #333;
+    background-color: #fff;
+    box-shadow: 1px 1px 3px grey;
+  }
+  
+  .like_button[value="0"]:hover {
+    border: 2px solid #2196F3;
+  }
+  
+  .like_button[value="1"] {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  .like_button[value="1"]:hover {
+    background-color: #0c81d7;
+    box-shadow: none;
+  }
+  
+  .like_button:focus {
+    outline: none;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    background-color: #e9e9e9;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button#add_to_cart {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  button#add_to_cart:hover {
+    background-color: #3e8e41;
+  }
+  
+  button#submit_comment {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  button#submit_comment:hover {
+    background-color: #0c81d7;
+  }
+  
+  select {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #e9e9e9;
+  }

@@ -1,0 +1,69 @@
+/* Body样式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+   
+  /* 所有订单区域样式 */
+  #all_orders {
+    max-width: 1000px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  /* 订单项样式 */
+  .orderItem {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #ccc;
+    text-align: center;
+  }
+  
+  /* 商品名称、价格样式 */
+  .order_paintingname_div,
+  .order_cost_div {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* 商品图片样式 */
+  .order_image {
+    margin-bottom: 10px;
+  }
+  
+  /* 操作按钮样式 */
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  button:hover {
+    background-color: #555;
+  }
+  
+  /* 无订单时的文本样式 */
+  #all_orders p {
+    font-size: 25px;
+    color: #888;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+
+#title {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+  

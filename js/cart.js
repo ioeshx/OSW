@@ -52,12 +52,6 @@ function display_orders(data){
         var orderItem = document.createElement("div");
         orderItem.id = data[i].OrderID;
         orderItem.class = "orderItem";
-        // //显示订单ID
-        // var order_ID_div = document.createElement("div");
-        // order_ID_div.id = "order_ID_div_" + data[i].OrderID;
-        // order_ID_div.class = "order_ID_div";
-        // order_ID_div.textContent = data[i].OrderID;
-        // orderItem.appendChild(order_ID_div);
         //商品名称
         var order_paintingname_div = document.createElement("div");
         order_paintingname_div.id = "order_paintingname_div_" + data[i].OrderID;

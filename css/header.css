@@ -41,7 +41,7 @@ nav {
     font-size: 16px;
   }
   
-  /* 音频控件样式 */
+  /* //音频控件样式
   audio {
     margin-left: 20px;
     width: 150px;
@@ -54,7 +54,7 @@ nav {
   }
   audio:hover {
     border-color: #f44336;
-  }
+  } */
   
   /* 响应式设计 */
   @media screen and (max-width: 768px) {
