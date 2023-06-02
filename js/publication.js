@@ -15,7 +15,8 @@ function publicate_product(){
         // else 
         //     throw new Error(Response.json().message)
     }).then(data=>{
-        alert(data.message)
+        alert(data.message);
+        window.location.reload();
     }).catch(error=>{
         alert(error)
     })

@@ -1,4 +1,4 @@
-/* 整个页面的样式 */
+
 body {
   margin: 0;
   font-family: "Microsoft YaHei", sans-serif;
@@ -6,7 +6,7 @@ body {
   color: #333;
 }
 
-/* 最新发布商品区域样式 */
+
 #show_newest_product {
   display: flex;
   flex-wrap: wrap;
@@ -48,4 +48,6 @@ body {
 #show_newest_product button:hover {
   background-color: #0099a8;
 }
+
+
 

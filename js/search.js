@@ -94,7 +94,7 @@ function getSearchResultsByPage(page) {
     detail_btn.addEventListener("click", function (event) {
       var id = event.target.getAttribute("value");
       window.location.href =
-        "http://10.117.234.157/php/product_detail.html?PaintingID=" + id;
+        "http://10.117.234.157/html/product_detail.html?PaintingID=" + id;
     });
     SearchItem.appendChild(detail_btn);
     // 把父元素添加到更大的下面

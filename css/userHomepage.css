@@ -193,10 +193,10 @@ body {
 }
 
 .orderItem {
-  margin: 20px;
+  margin: 30px;
   padding: 20px;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border: 1px solid #777575de;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -213,7 +213,7 @@ body {
 }
 
 .order_image {
-  margin-top: 20px;
+  margin: 20px;
   border: 1px solid #ddd;
   border-radius: 5px;
   max-width: 100%;

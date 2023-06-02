@@ -10,17 +10,17 @@ function display_my_publication(data){
     for(var i=0; i<data.length; i++){
         //创建父元素
         var orderItem = document.createElement("div");
-        orderItem.id = data[i].OrderID;
+        orderItem.id = data[i].PaintingID;
         orderItem.class = "orderItem";
         //展示商品名称
         var order_paintingname_div = document.createElement("div");
-        order_paintingname_div.id = "order_paintingname_div_" + data[i].OrderID;
+        order_paintingname_div.id = "order_paintingname_div_" + data[i].PaintingID;
         order_paintingname_div.class = "order_paintingname_div";
         order_paintingname_div.textContent = data[i].PaintingName;
         orderItem.appendChild(order_paintingname_div);
         //展示商品图片
         var order_image = document.createElement("img");
-        order_image.id = "order_image_" + data[i].OrderID;
+        order_image.id = "order_image_" + data[i].PaintingID;
         order_image.class = "order_image";
         order_image.height = "300";
         order_image.width = "300";
