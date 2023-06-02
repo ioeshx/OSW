@@ -16,7 +16,7 @@ function submit_comment(){
         formData.append("PaintingID", PaintingID);
         formData.append("username",username);
         formData.append("ResponseToCommentID", ResponseToCommentID);
-        fetch("http://localhost/submit_comment.php",{
+        fetch("http://10.117.234.157/php/submit_comment.php",{
             method:"POST",
             body:formData
         }).then(Response =>{

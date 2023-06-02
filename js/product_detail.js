@@ -4,7 +4,7 @@ function get_product_detail_byID(){
     const formData = new FormData();
     formData.append("PaintingID", PaintingID);
 
-    fetch("http://localhost/product_detail.php",{
+    fetch("http://10.117.234.157/php/product_detail.php",{
         method:"POST",
         body:formData
     }).then(Response =>{
@@ -52,7 +52,7 @@ document.getElementById("add_to_cart").addEventListener("click", function(){
     formData.append("userID",localStorage.getItem("userID"));
     formData.append("PaintingID", searchParams.get("PaintingID"));
     formData.append("username", localStorage.getItem("username"));
-    fetch("http://localhost/add_to_cart.php",{
+    fetch("http://10.117.234.157/php/add_to_cart.php",{
         method:"POST",
         body:formData
     }).then(Response =>{

@@ -27,7 +27,7 @@ function get_user_info(){
     if(username !== null && isLogin !== null){
         var formData = new FormData();
         formData.append("username", username);
-        fetch("http://localhost/get_user_info.php",{
+        fetch("http://10.117.234.157/php/get_user_info.php",{
             method:"POST",
             body:formData
         }).then(Response =>{

@@ -29,7 +29,7 @@ function logout_btn(){
   if(isLogin){  
       localStorage.clear();
       alert("已登出！")
-      window.location.href="http://localhost:5500/html/homepage.html";
+      window.location.href="http://10.117.234.157/html/homepage.html";
     }
 }
 

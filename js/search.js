@@ -94,7 +94,7 @@ function getSearchResultsByPage(page) {
     detail_btn.addEventListener("click", function (event) {
       var id = event.target.getAttribute("value");
       window.location.href =
-        "http://localhost:5500/html/product_detail.html?PaintingID=" + id;
+        "http://10.117.234.157/php/product_detail.html?PaintingID=" + id;
     });
     SearchItem.appendChild(detail_btn);
     // 把父元素添加到更大的下面
@@ -246,7 +246,7 @@ document.getElementById("search_button").addEventListener("click",function(){
         else
             formData.append("type", 2);
         
-        fetch("http://localhost/search.php",{
+        fetch("http://10.117.234.157/php/search.php",{
             method:"POST",
             body:formData
         }).then(Response =>{
@@ -272,7 +272,7 @@ window.addEventListener("DOMContentLoaded",function(){
 })
 
 function get_all_paintings(){
-    fetch("http://localhost/get_all_paintings.php",{
+    fetch("http://10.117.234.157/php/get_all_paintings.php",{
         method:"GET",
     }).then(Response =>{
         if(Response.ok)

@@ -10,7 +10,7 @@ function recharge(){
     var formData = new FormData();
     formData.append("money",money);
     formData.append("userID",localStorage.getItem("userID"));
-    fetch("http://localhost/recharge.php",{
+    fetch("http://10.117.234.157/php/recharge.php",{
             method:"POST",
             body:formData
         }).then(Response =>{

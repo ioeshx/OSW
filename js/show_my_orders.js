@@ -34,7 +34,7 @@ function display_my_orders(data){
 window.addEventListener("DOMContentLoaded",function(){
     const formData = new FormData();
     formData.append("userID",this.localStorage.getItem("userID"));
-    fetch("http://localhost/show_my_orders.php",{
+    fetch("http://10.117.234.157/php/show_my_orders.php",{
         method:"POST",
         body:formData
     }).then(Response =>{

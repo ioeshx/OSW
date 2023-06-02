@@ -34,7 +34,7 @@ function display_my_publication(data){
 window.addEventListener("DOMContentLoaded",function(){
     const formData = new FormData();
     formData.append("username",this.localStorage.getItem("username"));
-    fetch("http://localhost/show_my_publication.php",{
+    fetch("http://10.117.234.157/php/show_my_publication.php",{
         method:"POST",
         body:formData
     }).then(Response =>{

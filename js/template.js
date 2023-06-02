@@ -1,6 +1,6 @@
 const formData = new FormData();
 
-fetch("http://localhost/",{
+fetch("http://10.117.234.157/php/",{
     method:"POST",
     body:formData
 }).then(Response =>{

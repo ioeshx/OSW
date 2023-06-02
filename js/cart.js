@@ -2,7 +2,7 @@ function purchase_order(){
     var OrderID = this.id;
     const formData = new FormData();
     formData.append("OrderID", OrderID);
-    fetch("http://localhost/purchase_order.php",{
+    fetch("http://10.117.234.157/php/purchase_order.php",{
         method:"POST",
         body:formData
     }).then(Response =>{
@@ -23,7 +23,7 @@ function delete_order(){
     var OrderID = this.id;
     const formData = new FormData();
     formData.append("OrderID", OrderID);
-    fetch("http://localhost/delete_order.php",{
+    fetch("http://10.117.234.157/php/delete_order.php",{
         method:"POST",
         body:formData
     }).then(Response =>{
@@ -99,7 +99,7 @@ function display_orders(data){
 document.addEventListener("DOMContentLoaded", function(){
     const formData = new FormData();
     formData.append("userID",localStorage.getItem("userID"));
-    fetch("http://localhost/get_orders.php",{
+    fetch("http://10.117.234.157/php/get_orders.php",{
         method:"POST",
         body:formData
     }).then(Response =>{

@@ -64,7 +64,7 @@ document.getElementById("login_form").onsubmit = function(event){
     alert("密码不合法");
     return false;
   }
-  fetch("http://localhost/login.php",{
+  fetch("http://10.117.234.157/php/login.php",{
     method:"POST",
     body:formData
   })

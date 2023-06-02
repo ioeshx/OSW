@@ -1,5 +1,5 @@
 function show_5_product(){
-    fetch("http://localhost/getNewestProduct.php",{
+    fetch("http://10.117.234.157/php/getNewestProduct.php",{
       method:"GET"  
     }).then(Response =>{
         if(Response.ok)
@@ -17,7 +17,7 @@ function show_5_product(){
             document.getElementById("product_detail_" + (i+1)).value = current_product.PaintingID;
             document.getElementById("product_detail_" + (i+1)).addEventListener("click", function(event){
                 var id = event.target.getAttribute("value");
-                window.location.href ="http://localhost:5500/html/product_detail.html?PaintingID=" + id;
+                window.location.href ="http://10.117.234.157/html/product_detail.html?PaintingID=" + id;
             })
         }
     }).catch(e =>{

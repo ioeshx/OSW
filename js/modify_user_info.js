@@ -28,7 +28,7 @@ function modify_user_info(){
         alert("密码中含有生日，请重新输入！");
         return false;
     }else{
-        fetch("http://localhost/modify_user_info.php",{
+        fetch("http://10.117.234.157/php/modify_user_info.php",{
             method:"POST",
             body:formData
         }).then(Response => {

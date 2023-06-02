@@ -5,7 +5,7 @@ function publicate_product(){
     const DatePublished = new Date().toISOString().slice(0,19).replace('T',' ');
     formData.append("PublisherName", PublisherName);
 
-    fetch("http://localhost/publication.php",{
+    fetch("http://10.117.234.157/php/publication.php",{
         method:"POST",
         body:formData
     }).then(Response=>{

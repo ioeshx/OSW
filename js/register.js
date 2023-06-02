@@ -122,7 +122,7 @@ document.getElementById("register_form").addEventListener('submit', function(Eve
     return false;
   }
 
-  fetch("http://localhost/register.php",{
+  fetch("http://10.117.234.157/php/register.php",{
     method:"POST",
     body:registerFormData
   })

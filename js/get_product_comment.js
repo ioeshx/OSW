@@ -2,7 +2,7 @@ function delete_comment(Event){
     const commentID = Event.target.value;
     var formData = new FormData();
     formData.append("commentID", commentID);
-    fetch("http://localhost/delete_comment.php",{
+    fetch("http://10.117.234.157/php/delete_comment.php",{
         method:"POST",
         body:formData
     }).then(Response =>{
@@ -26,7 +26,7 @@ function like_and_cancel_like(){
     formData.append("commentID",commentID);
     formData.append("userID", localStorage.getItem("userID"));
     formData.append("type", type);
-    fetch("http://localhost/like_cancel_like.php",{
+    fetch("http://10.117.234.157/php/like_cancel_like.php",{
         method:"POST",
         body:formData
     }).then(Response =>{
@@ -57,7 +57,7 @@ function get_user_like(){
     const formData = new FormData();
     var userID =localStorage.getItem("userID");
     formData.append("userID",userID);
-    fetch("http://localhost/get_user_like.php",{
+    fetch("http://10.117.234.157/php/get_user_like.php",{
         method:"POST",
         body:formData
     }).then(Response =>{
@@ -158,7 +158,7 @@ function display_comment(data){
     
 };
 
-const url = `http://localhost/get_product_comment.php${location.search}`
+const url = `http://10.117.234.157/php/get_product_comment.php${location.search}`
 
 function get_product_comment(){
     fetch(url,{
