@@ -20,9 +20,11 @@ function modify_user_info(){
     if(document.getElementById("origin_password").value !== localStorage.getItem("password")){
         alert("原密码不正确！");
         return false;
-    }
-    else if(password !== confirm_password){
-        alert("修改后密码不一致，请重新输入！");
+    }else if(password == ""){
+        alert("修改后密码为空，请重新输入！");
+        return false;
+    }else if(password !== confirm_password){
+        alert("修改后密码两次不一致，请重新输入！");
         return false;
     }else if( modify_birthday_input.value != ""  && password.includes(String(birthday_Number))){
         alert("密码中含有生日，请重新输入！");

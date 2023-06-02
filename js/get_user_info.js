@@ -17,7 +17,6 @@ function fill_in_user_info(data){
     document.getElementById("modify_gender").value = data.Gender;
     document.getElementById("modify_birthday").value = data.Birthday;
     document.getElementById("modify_country").value = data.Country;
-    document.getElementById("password").value = localStorage.getItem("password");
     document.getElementById("modify_RealName").value = data.RealName;
 }
 
