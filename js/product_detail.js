@@ -24,6 +24,7 @@ function get_product_detail_byID(){
         document.getElementById("DatePublished").innerText += data.DatePublished;
         document.getElementById("PublisherName").innerText += data.PublisherName;
         document.getElementById("Cost").innerText += (parseFloat(data.Cost)).toFixed(2);
+        document.getElementById("visits").innerText += parseInt(data.Visits);
         if(data.Status == 0)
             document.getElementById("Status").innerText += "否";
         else 

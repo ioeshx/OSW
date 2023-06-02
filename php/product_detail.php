@@ -12,18 +12,25 @@
         if(!$conn)
             throw new Exception("连接数据库失败");
         $ID = $_POST["PaintingID"];
+        //点击查看详情时，增加商品访问量
+        $sql_add_visits = "UPDATE paintings SET Visits=Visits+1 WHERE PaintingID = ?";
+        $stmt = $conn->prepare($sql_add_visits);
+        $stmt->bind_param("i", $ID);
+        $stmt->execute();
+        $stmt->close();
+        //返回信息
         $sql_get_product_info = "SELECT * FROM paintings WHERE PaintingID = $ID";
         $result = $conn->query($sql_get_product_info);
         if($result->num_rows !== 1)
             throw new Exception("获取信息失败，数据库中没有相应的商品");
         else{
             $row = $result->fetch_assoc();
-            $p = new product(PaintingName:$row["PaintingName"],AuthorName:$row["AuthorName"],
-                            Description:$row["Description"], YearOfWork:$row["YearOfWork"],Genre:$row["Genre"],
-                            Era:$row["Era"],Width:$row["Width"],Height:$row["Height"],Cost:$row["Cost"],
-                            ImageFileName:$row["ImageFileName"],PublisherName:$row["PublisherName"],
-                            DatePublished: $row["DatePublished"],Status:$row["Status"]);
-            echo json_encode($p);
+            // $p = new product(PaintingName:$row["PaintingName"],AuthorName:$row["AuthorName"],
+            //                 Description:$row["Description"], YearOfWork:$row["YearOfWork"],Genre:$row["Genre"],
+            //                 Era:$row["Era"],Width:$row["Width"],Height:$row["Height"],Cost:$row["Cost"],
+            //                 ImageFileName:$row["ImageFileName"],PublisherName:$row["PublisherName"],
+            //                 DatePublished: $row["DatePublished"],Status:$row["Status"]);
+            echo json_encode($row);
         }
     }catch(Exception $e){
         http_response_code(400);

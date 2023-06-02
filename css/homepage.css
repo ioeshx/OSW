@@ -6,28 +6,6 @@ body {
   color: #333;
 }
 
-/* 顶部导航栏样式 */
-/* #top_nav {
-  height: 80px;
-  background-color: #333;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 50px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-#top_nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  margin-right: 30px;
-}
-
-#top_nav a:hover {
-  color: #00c5cd;
-} */
-
 /* 最新发布商品区域样式 */
 #show_newest_product {
   display: flex;
@@ -71,12 +49,3 @@ body {
   background-color: #0099a8;
 }
 
-/* 版权信息样式 */
-/* #copyright {
-  text-align: center;
-  background-color: #f7f7f7;
-  color: #666;
-  font-size: 14px;
-  padding: 10px;
-  margin-top: 50px;
-} */
