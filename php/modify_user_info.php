@@ -16,12 +16,24 @@
             // 检查连接是否成功
             if ($conn->connect_error)
                 throw new Exception("数据库连接失败：" . $conn->connect_error);
-            //更新密码和盐值
+
             $salt = bin2hex(random_bytes(16));
             $hashed_password = hash("sha256", $modify_password. $salt);
-            $sql_modify_password = "UPDATE customerlogon SET Pass='$hashed_password',Salt='$salt' WHERE CustomerID=$ID ";
-            if($conn->query($sql_modify_password) != true){
-                throw new Exception("修改密码失败" . $conn->error);
+            // $sql_modify_password = "UPDATE customerlogon SET Pass='$hashed_password',Salt='$salt' WHERE CustomerID=$ID ";
+            // if($conn->query($sql_modify_password) != true){
+            //     throw new Exception("修改密码失败" . $conn->error);
+            // }
+            // 准备 SQL 语句和参数绑定
+            $sql_modify_password = "UPDATE customerlogon SET Pass=?, Salt=? WHERE CustomerID=?";
+            $stmt = $conn->prepare($sql_modify_password);
+            if (!$stmt) {
+                throw new Exception("SQL 准备失败：" . $conn->error);
+            }
+            // 绑定变量到占位符
+            $stmt->bind_param("sss", $hashed_password, $salt, $ID);
+            // 执行预处理语句
+            if (!$stmt->execute()) {
+                throw new Exception("修改密码失败：" . $stmt->error);
             }
             //更新其他信息
             // if( $modify_birthday == "")

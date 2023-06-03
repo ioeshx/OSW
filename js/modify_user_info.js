@@ -23,7 +23,7 @@ function modify_user_info(){
     }else if(password == ""){
         alert("修改后密码为空，请重新输入！");
         return false;
-    }else if(password !== confirm_password){
+    }else if( password != "" && password !== confirm_password){
         alert("修改后密码两次不一致，请重新输入！");
         return false;
     }else if( modify_birthday_input.value != ""  && password.includes(String(birthday_Number))){
@@ -40,6 +40,7 @@ function modify_user_info(){
                 throw new Error(Response.json().message);
         }).then(data=>{
             alert(data.message);
+            localStorage.setItem("password", password);
             window.location.reload();
         }).catch(e=>{
             alert(e);

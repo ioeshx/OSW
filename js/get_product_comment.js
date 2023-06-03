@@ -20,6 +20,10 @@ function delete_comment(Event){
 }
 
 function like_and_cancel_like(){
+    if(localStorage.getItem("isLogin") == null){
+        alert("你尚未登录，无法点赞!")
+        return false;
+    }
     const type = this.value;
     const commentID = this.parentNode.id;
     const formData = new FormData();
