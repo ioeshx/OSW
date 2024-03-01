@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 $servername = "localhost";
 $sql_username = "root";
-$sql_password = "shihongxiang";
+$sql_password = "123456";
 $dbname = "art";
 
 if($_SERVER['REQUEST_METHOD']==="POST"){
